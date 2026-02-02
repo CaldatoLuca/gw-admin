@@ -1,11 +1,6 @@
 "use client";
-import ThemeToggle from "@/components/ThemeToggle";
+import { Card } from "@radix-ui/themes";
 
 export default function LoginPage() {
-  return (
-    <>
-      <ThemeToggle></ThemeToggle>
-      <div>Login</div>
-    </>
-  );
+  return <Card>Login</Card>;
 }
