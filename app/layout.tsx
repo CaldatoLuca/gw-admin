@@ -31,8 +31,8 @@ export default function RootLayout({
         <Theme
           accentColor="tomato"
           panelBackground="solid"
-          scaling="100%"
-          radius="full"
+          scaling="105%"
+          radius="medium"
           appearance="dark"
         >
           {children}
