@@ -1,12 +1,19 @@
-import { ComponentType } from "react";
-import type { InputType } from "./utility.types";
+import z from "zod";
+import { InputType } from "./utility.types";
+
+export const loginSchema = z.object({
+  email: z.string().min(1, "Email mancante").email("Email non valida"),
+  password: z.string().min(1, "Password mancante"),
+});
+
+export type LoginFormValues = z.infer<typeof loginSchema>;
 
 export interface FormFieldProps {
-  name: string;
+  control: any;
+  name: keyof LoginFormValues;
   label: string;
-  placeholder: string;
+  placeholder?: string;
   type?: InputType;
-  icon?: ComponentType<{ width?: number; height?: number }>;
-  required?: boolean;
+  icon?: React.ComponentType<any>;
   isPassword?: boolean;
 }
