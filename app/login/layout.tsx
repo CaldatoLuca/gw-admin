@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function LoginLayout({ children }: { children: ReactNode }) {
   return (
     <main className="h-screen flex justify-center items-center">
-      <div>{children}</div>
+      {children}
     </main>
   );
 }

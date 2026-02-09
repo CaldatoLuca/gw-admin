@@ -1,2 +1,18 @@
 @import "tailwindcss";
 @import "@radix-ui/themes/styles.css";
+
+.header-box {
+  @apply border rounded-lg p-3 shadow-2xl;
+  background-color: #18191b;
+  border-color: #363a3f;
+}
+.nav-box {
+  @apply border rounded-lg p-3 overflow-y-auto w-3xs shadow-2xl;
+  background-color: #18191b;
+  border-color: #363a3f;
+}
+.main-box {
+  @apply flex-1 p-3 overflow-y-auto border rounded-lg shadow-2xl;
+  background-color: #18191b;
+  border-color: #363a3f;
+}
