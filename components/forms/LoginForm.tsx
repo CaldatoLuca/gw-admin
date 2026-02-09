@@ -9,6 +9,7 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import FormField from "../FormField";
 import { LoginFormValues, loginSchema } from "@/lib/types/components.types";
+import { showToast } from "nextjs-toast-notify";
 
 export default function LoginForm() {
   const { handleSubmit, control } = useForm<LoginFormValues>({
@@ -24,11 +25,39 @@ export default function LoginForm() {
       const res = await api.post<LoginResponse>("/auth/login", values);
 
       if (res.data.success) {
-        if (res.data.user.role === "ADMIN") router.push("/dashboard");
-        else router.push("/");
+        if (res.data.user.role === "ADMIN") {
+          showToast.success(
+            `Bentornato in GoldenView ${res.data.user.username}`,
+            {
+              duration: 4000,
+              progress: false,
+              position: "top-right",
+              transition: "slideInUp",
+              icon: "",
+              sound: true,
+            },
+          );
+          router.push("/dashboard");
+        } else {
+          showToast.warning(`Non hai i permessi per accedere`, {
+            duration: 4000,
+            progress: false,
+            position: "top-right",
+            transition: "slideInUp",
+            icon: "",
+            sound: true,
+          });
+        }
       }
     } catch (err) {
-      console.error(err);
+      showToast.error(`Errore generico del server`, {
+        duration: 4000,
+        progress: false,
+        position: "top-right",
+        transition: "slideInUp",
+        icon: "",
+        sound: true,
+      });
     } finally {
       setIsLoading(false);
     }

@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Theme
-          accentColor="tomato"
+          accentColor="iris"
           panelBackground="solid"
           scaling="105%"
           radius="medium"

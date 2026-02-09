@@ -29,7 +29,7 @@ export default function FormField({
             <Flex justify="between" align="center">
               <label>{label}</label>
               {fieldState.error && (
-                <Text size="2" color="pink">
+                <Text size="2" color="ruby">
                   {fieldState.error.message}
                 </Text>
               )}
