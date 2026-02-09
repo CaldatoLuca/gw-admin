@@ -12,32 +12,34 @@
   background-color: #18191b;
   border-color: #363a3f;
 }
+
 .nav-box {
   @apply border rounded-md p-4 overflow-y-auto w-3xs shadow-2xl;
   background: linear-gradient(135deg, #1a1b1e 0%, #18191b 100%);
   border-color: #363a3f;
 }
-
 .nav-link {
   @apply flex gap-3 items-center px-4 py-2 rounded-lg transition-all duration-300;
   color: #e0e0e0;
   position: relative;
   overflow: hidden;
 }
-
 .nav-link:hover {
   background-color: rgba(139, 92, 246, 0.1);
   color: #a78bfa;
   transform: translateX(4px);
 }
-
+.nav-link-active {
+  background-color: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+}
 .nav-link:hover::before {
   transform: scaleY(1);
 }
-
 .nav-link:active {
   transform: translateX(4px) scale(0.98);
 }
+
 .main-box {
   @apply flex-1 p-3 overflow-y-auto border rounded-lg shadow-2xl;
   background-color: #18191b;
