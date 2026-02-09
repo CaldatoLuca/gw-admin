@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @import "@radix-ui/themes/styles.css";
 
+/*Reset*/
+.rt-BaseButton {
+  @apply cursor-pointer;
+}
+
+/* Dashboard Layout*/
 .header-box {
   @apply border rounded-lg p-3 shadow-2xl;
   background-color: #18191b;

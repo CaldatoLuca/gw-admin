@@ -31,7 +31,7 @@ export default function LoginForm() {
             {
               duration: 4000,
               progress: false,
-              position: "top-right",
+              position: "top-center",
               transition: "slideInUp",
               icon: "",
               sound: true,
